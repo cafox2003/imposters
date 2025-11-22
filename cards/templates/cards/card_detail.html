@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="{% static 'cards/style.css' %}">
   </head>
   <body>
-    <div class="card-container">
-      <div class="card" id="front-side">
-        {{card.front}}
-      </div>
-      <div class="card hidden" id="back-side">
-        {{card.back}}
-      </div>
-    </div>
 
-    <button id="flip-btn">Flip</button>
+    <div class="main-wrapper">
 
-    <div class="card-container">
-      <a href="{% url 'card-detail' card.id|add:'-1' %}">Previous</a>
-      <a href="{% url 'card-detail' card.id|add:'1' %}">Next</a>
+      <div class="card-container">
+        <div class="card" id="front-side">
+          {{card.front}}
+        </div>
+        <div class="card hidden" id="back-side">
+          {{card.back}}
+        </div>
+      </div>
+
+      <div class="nav-link">
+        <a id="prev-link" href="{% url 'card-detail' card.id|add:'-1' %}">&#10229</a>
+        <a id="next-link" href="{% url 'card-detail' card.id|add:'1' %}">&#10230</a>
+      </div>
     </div>
 
     <script src="{% static 'cards/card.js' %}"></script>
