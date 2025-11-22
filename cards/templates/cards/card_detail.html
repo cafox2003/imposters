@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,10 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'cards/style.css' %}">
   </head>
   <body>
-    <p>{{card.back}}</p>
-    <p>{{card.front}}</p>
+    <div class="card-container">
+      <div class="card" id="front-side">
+        {{card.front}}
+      </div>
+      <div class="card hidden" id="back-side">
+        {{card.back}}
+      </div>
+    </div>
+
+    <button id="flip-btn">Flip</button>
+
+    <div class="card-container">
+      <a href="{% url 'card-detail' card.id|add:'-1' %}">Previous</a>
+      <a href="{% url 'card-detail' card.id|add:'1' %}">Next</a>
+    </div>
+
+    <script src="{% static 'cards/card.js' %}"></script>
   </body>
 </html>
