@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-!=!#13f=915!!#3_8skpb*4!+e65pfp=sit_3(m+vx4!&w!2z%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['imposters.cafox.dev']
+
+CSRF_TRUSTED_ORIGINS = ["https://imposters.cafox.dev"]
 
 
 # Application definition
