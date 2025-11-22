@@ -15,6 +15,13 @@ body {
   gap: 20px;
 }
 
+.question-id {
+  font-size: 3.5rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #333;
+}
+
 .card-container {
   position: relative;
   width: 80vh;
